@@ -4,13 +4,13 @@ import User from "../../database/usersSchema.js"
 import { validPassword } from "../lib/passwordUtils.js";
 
 const customFields = {
-    usernameField: 'uname',
+    usernameField: 'email',
     passwordField: 'pw'
 };
 
-const verifyCallback = async (username, password, done) => {
+const verifyCallback = async (email, password, done) => {
     try {
-        const user = await User.findOne({ username: username });
+        const user = await User.findOne({ email: email });
 
         if (!user) {
             return done(null, false, { message: 'User not found!' })
