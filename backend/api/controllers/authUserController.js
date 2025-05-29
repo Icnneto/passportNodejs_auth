@@ -13,6 +13,7 @@ export function authenticateUser(req, res, next) {
 
         req.logIn(user, (err) => {
             if (err) return next(err);
+            console.log(user);
             return res.status(200).json({ success: true, message: 'Succesfull login!' });
         });
     })(req, res, next);
