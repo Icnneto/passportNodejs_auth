@@ -18,7 +18,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: 'http://127.0.0.1:5500',
+    origin: 'https://icnneto.github.io/passportNodejs_auth',
     credentials: true
 }));
 app.use(express.json());
@@ -41,8 +41,8 @@ app.use(session({
     store: sessionStore,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24, // Equals 1 day
-        sameSite: 'lax',
-        secure: false
+        sameSite: 'none',
+        secure: true
     }
 }));
 
