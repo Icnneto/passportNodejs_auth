@@ -33,7 +33,7 @@
                 <input type="password" id="password" name="pw"
                     class="text-sm lg:text-base text-paragraph mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
                     hover:border-yellow hover:ring-1 hover:ring-yellow/50 focus:outline-none focus:border-yellow/50 focus:ring-1 focus:ring-yellow/50"
-                    data-input="password" required />
+                    data-input="password"  />
                 <span class="error-message text-sm text-red-600 mb-4"></span>
             </fieldset>
 
@@ -50,7 +50,9 @@
         </div>
     </main>
 
-    <script src="js/errors.js"></script>
+    <script type="module" src="js/errors/errors.js"></script>
+    <script type="module" src="js/submit/login.js"></script>
+
 </body>
 
 </html>
