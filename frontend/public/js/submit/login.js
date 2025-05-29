@@ -39,9 +39,7 @@ form.addEventListener('submit', async (e) => {
             return createAndShowToast(data.message, 'negative', body);  
         };
 
-        const positiveMessage = response.json();
-        const objective = 'positive';
-        createAndShowToast(positiveMessage, objective, body);
+        createAndShowToast(data.message, 'positive', body);
 
         setTimeout(() => {
             window.location.replace('./pages/protected.html');
