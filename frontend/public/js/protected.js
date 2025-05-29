@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         const data = await response.json();
 
         if (!response.ok) {
+            console.log(response);
             createAndShowToast(data.message || 'Unauthorized', 'negative', body);
             setTimeout(() => {
                 window.location.replace('../index.html');
