@@ -1,4 +1,5 @@
 import { createAndShowToast } from "../utils/toast.js";
+import { buttonPulseRemove, buttonPulseActivate } from "../utils/btnPulse.js";
 const body = document.querySelector('body');
 const form = document.querySelector('#login_form');
 const emailInput = document.querySelector('#email');
@@ -21,7 +22,7 @@ form.addEventListener('submit', async (e) => {
         'pw': passwordInput.value
     };
 
-    addPulseBtnSubmit();
+    buttonPulseActivate(btnSubmit);
 
     const requestOptions = {
         method: 'POST',
@@ -53,17 +54,7 @@ form.addEventListener('submit', async (e) => {
         const objective = 'negative';
         createAndShowToast(alert, objective, body);
     } finally {
-        removePulseBtnSubmit()
+        buttonPulseRemove(btnSubmit);
     };
 
 });
-
-
-function addPulseBtnSubmit() {
-    btnSubmit.classList.add('animate-pulse');
-};
-
-function removePulseBtnSubmit() {
-    btnSubmit.classList.remove('animate-pulse');
-};
-

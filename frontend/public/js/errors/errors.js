@@ -8,7 +8,7 @@ const typesOfErrors = [
 ];
 
 const messages = {
-    name: {
+    uname: {
         valueMissing: "Ops! We need your name!",
         patternMismatch: "Please, insert a valid name.",
         tooShort: "Please, insert a valid name."

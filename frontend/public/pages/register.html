@@ -21,7 +21,7 @@
         <form class="w-[20rem] flex flex-col gap-y-4" id="register_form">
             <fieldset class="flex flex-col">
                 <label class="text-sm lg:text-lg font-light text-title" for="name">Name</label>
-                <input type="text" id="text" name="name"
+                <input type="text" id="name" name="uname"
                     class="text-sm lg:text-base text-paragraph mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
                     hover:border-yellow hover:ring-1 hover:ring-yellow/50 focus:outline-none focus:border-yellow/50 focus:ring-1 focus:ring-yellow/50"
                      data-input="name" minlength="3" required />
@@ -47,14 +47,15 @@
             </fieldset>
 
             <fieldset class="flex flex-col">
-                <input type="submit" value="Register" id="btn-register" disabled
+                <input type="submit" value="register" id="btn-register" disabled
                     class="disabled:opacity-50 disabled:cursor-not-allowed bg-yellow text-white text-base px-4 py-2 rounded-lg shadow hover:bg-yellow/85 transition cursor-pointer">
                 </input>
             </fieldset>
         </form>
     </main>
 
-    <script src="../js/errors/errors.js"></script>
+    <script type="module" src="../js/submit/registration.js"></script>
+    <script type="module" src="../js/errors/errors.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 import { createAndShowToast } from "./utils/toast.js";
 import { handleLogOut } from "./logout.js";
+import { buttonPulseActivate, buttonPulseRemove } from "./utils/btnPulse.js";
 const main = document.querySelector('main');
 const body = document.querySelector('body');
 
@@ -17,13 +18,13 @@ window.addEventListener('DOMContentLoaded', async () => {
             createAndShowToast(data.message || 'Unauthorized', 'negative', body);
             setTimeout(() => {
                 window.location.replace('../index.html');
-            }, 1000);
+            }, 1500);
         }
 
         createInterface(main, data.user);
 
     } catch (error) {
-        console.error('Erro ao verificar autenticação:', error);
+        console.error('Erro at authorization', error);
         createAndShowToast(error, 'negative', body);
         setTimeout(() => {
             window.location.replace('../index.html');
@@ -54,7 +55,15 @@ function createInterface(element, user) {
         </button>
     `
     const logoutBtn = document.querySelector('#logout');
-    logoutBtn.addEventListener('click', handleLogOut)
+    logoutBtn.addEventListener('click', async () => {
+        try {
+            buttonPulseActivate(logoutBtn);
+            await handleLogOut();
+            buttonPulseRemove(logoutBtn);
+        } catch (error) {
+            createAndShowToast(error, 'negative', body);
+        }        
+    })
 
     element.appendChild(section);
 };
