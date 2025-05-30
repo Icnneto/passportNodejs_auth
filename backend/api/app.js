@@ -42,9 +42,10 @@ app.use(session({
     saveUninitialized: false,
     store: sessionStore,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24, // Equals 1 day
-        // sameSite: 'lax',
-        // secure: false
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
+        maxAge: 24 * 60 * 60 * 1000
     }
 }));
 
