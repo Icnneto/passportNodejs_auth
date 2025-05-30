@@ -1,4 +1,5 @@
 import { createAndShowToast } from "./utils/toast.js";
+import { handleLogOut } from "./logout.js";
 const main = document.querySelector('main');
 
 window.addEventListener('DOMContentLoaded', async () => {
@@ -48,5 +49,8 @@ function createInterface(element, user) {
             </div>
         </button>
     `
+    const logoutBtn = document.querySelector('#logout');
+    logoutBtn.addEventListener('click', handleLogOut)
+
     element.appendChild(section);
 };

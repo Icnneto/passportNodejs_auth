@@ -1,11 +1,7 @@
 import { createAndShowToast } from "./utils/toast.js";
-const btnLogout = document.querySelector('#logout');
-const body = document.querySelector('body');
 
-btnLogout.addEventListener('click', async (e) => {
-    e.preventDefault();
-
-    addPulseBtnLogout()
+export async function handleLogOut() {
+    // addPulseBtnLogout()
 
     const requestOptions = {
         method: 'GET',
@@ -14,7 +10,6 @@ btnLogout.addEventListener('click', async (e) => {
         },
         credentials: 'include'
     };
-
 
     try {
         const response = await fetch('https://passportnodejs-auth.onrender.com/logoutUser', requestOptions);
@@ -31,15 +26,5 @@ btnLogout.addEventListener('click', async (e) => {
         const alert = 'Ops! Something went wrong. Try again later!';
         const objective = 'negative';
         createAndShowToast(alert, objective, body);
-    } finally {
-        removePulseBtnLogout();
-    }
-});
-
-function addPulseBtnLogout() {
-    btnLogout.classList.add('animate-pulse');
-};
-
-function removePulseBtnLogout() {
-    btnLogout.classList.remove('animate-pulse');
+    };
 };
