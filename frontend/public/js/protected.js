@@ -1,6 +1,7 @@
 import { createAndShowToast } from "./utils/toast.js";
 import { handleLogOut } from "./logout.js";
 const main = document.querySelector('main');
+const body = document.querySelector('body');
 
 window.addEventListener('DOMContentLoaded', async () => {
 
@@ -16,14 +17,17 @@ window.addEventListener('DOMContentLoaded', async () => {
             createAndShowToast(data.message || 'Unauthorized', 'negative', body);
             setTimeout(() => {
                 window.location.replace('../index.html');
-            }, 2000);
+            }, 1000);
         }
 
         createInterface(main, data.user);
 
     } catch (error) {
         console.error('Erro ao verificar autenticação:', error);
-        window.location.replace('../../index.html');
+        createAndShowToast(error, 'negative', body);
+        setTimeout(() => {
+            window.location.replace('../index.html');
+        }, 3000);
     }
 });
 
