@@ -1,5 +1,5 @@
 import { createAndShowToast } from "./utils/toast.js";
-const body = document.querySelector('body');
+const main = document.querySelector('main');
 
 window.addEventListener('DOMContentLoaded', async () => {
 
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             }, 2000);
         }
 
-        createInterface(body, data.user);
+        createInterface(main, data.user);
 
     } catch (error) {
         console.error('Erro ao verificar autenticação:', error);
@@ -26,12 +26,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-function createInterface(body, user) {
-    const main = document.createElement('main');
-    main.className = 'w-full', 'h-full', 'flex', 'flex-col', 'gap-y-4', 'items-center', 'justify-center';
-
-    const section = document.createElement('section');
-    section.className = 'w-full', 'h-1/3', 'rounded-2xl', 'flex', 'flex-col', 'items-center', 'gap-y-4';
+function createInterface(element, user) {
+    const section = document.querySelector('section');
 
     section.innerHTML += `
         <h1 class="text-2xl text-title">You've made it to the protected route, ${user}</h1>
@@ -52,6 +48,5 @@ function createInterface(body, user) {
             </div>
         </button>
     `
-    main.appendChild(section);
-    body.appendChild(main);
+    element.appendChild(section);
 };
