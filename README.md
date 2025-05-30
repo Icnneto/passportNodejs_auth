@@ -65,7 +65,7 @@ It communicates with the backend through fetch API calls.
 
 You can test the authentication system directly by visiting the deployed version:
 
-[**Access the app here**]([https://your-project-url.com](https://icnneto.github.io/passportNodejs_auth/frontend/public/index.html))
+[**Access the app here**](https://icnneto.github.io/passportNodejs_auth/frontend/public/index.html)
 
 ### Option 2: Run Locally
 
