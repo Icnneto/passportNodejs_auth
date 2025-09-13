@@ -10,6 +10,7 @@ export async function registerUser (req, res, next) {
     const newUser = new User({
         username: req.body.uname,
         email: req.body.email,
+        isTeacher: req.body.isTeacher,
         hash: hash,
         salt: salt,
     });

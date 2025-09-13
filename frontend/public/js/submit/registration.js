@@ -4,6 +4,7 @@ const body = document.querySelector('body');
 const form = document.querySelector('#register_form');
 const usernameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
+const toggleInput = documento.querySelector('#isTeacher');
 const passwordInput = document.querySelector('#password');
 const btnRegister = document.querySelector('#btn-register');
 
@@ -21,6 +22,7 @@ form.addEventListener('submit', async (e) => {
     const credentials = {
         'uname': usernameInput.value,
         'email': emailInput.value,
+        'isTeacher': toggleInput.value,
         'pw': passwordInput.value
     };
 

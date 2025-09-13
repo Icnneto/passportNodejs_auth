@@ -24,7 +24,7 @@
                 <input type="text" id="name" name="uname"
                     class="text-sm lg:text-base text-paragraph mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
                     hover:border-yellow hover:ring-1 hover:ring-yellow/50 focus:outline-none focus:border-yellow/50 focus:ring-1 focus:ring-yellow/50"
-                     data-input="name" minlength="3" required />
+                    data-input="name" minlength="3" required />
                 <span class="error-message text-sm text-red-600 mb-2"></span>
             </fieldset>
 
@@ -38,6 +38,23 @@
             </fieldset>
 
             <fieldset class="flex flex-col">
+                <label class="text-sm lg:text-lg font-light text-title mb-2" for="isTeacher">
+                    Sou professor
+                </label>
+                <div class="relative inline-flex items-center">
+                    <input type="checkbox" id="isTeacher" name="isTeacher" class="peer sr-only"
+                        data-input="isTeacher" />
+                    <div
+                        class="w-11 h-6 bg-slate-300 rounded-full peer peer-checked:bg-yellow transition-colors duration-300 ease-in-out">
+                    </div>
+                    <div
+                        class="absolute left-0.5 top-0.5 h-5 w-5 bg-white rounded-full shadow-md transition-transform duration-300 ease-in-out peer-checked:translate-x-5">
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="flex flex-col">
                 <label class="text-sm lg:text-lg font-light text-title" for="password">Password</label>
                 <input type="password" id="password" name="pw"
                     class="text-sm lg:text-base text-paragraph mb-2 mt-2 pl-3 border border-slate-300 py-2 rounded-lg shadow-md placeholder-paragraph/25 
@@ -47,7 +64,7 @@
             </fieldset>
 
             <fieldset class="flex flex-col">
-                <input type="submit" value="register" id="btn-register" disabled
+                <input type="submit" value="register" id="btn-register"
                     class="disabled:opacity-50 disabled:cursor-not-allowed bg-yellow text-white text-base px-4 py-2 rounded-lg shadow hover:bg-yellow/85 transition cursor-pointer">
                 </input>
             </fieldset>
